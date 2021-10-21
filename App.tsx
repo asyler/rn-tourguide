@@ -21,7 +21,7 @@ const uri =
 // Add <TourGuideProvider/> at the root of you app!
 function App() {
   return (
-    <TourGuideProvider {...{ borderRadius: 16 }}>
+    <TourGuideProvider {...{ persistTooltip: true }}>
       <AppContent />
     </TourGuideProvider>
   )
@@ -50,7 +50,6 @@ const AppContent = () => {
     <View style={styles.container}>
       {/* Use TourGuideZone only to wrap */}
       <TourGuideZone
-        keepTooltipPosition
         zone={2}
         text={'A react-native-copilot remastered! 🎉'}
         borderRadius={16}
@@ -64,7 +63,7 @@ const AppContent = () => {
           <Text style={styles.buttonText}>START THE TUTORIAL!</Text>
         </TouchableOpacity>
 
-        <TourGuideZone zone={3} shape={'rectangle_and_keep'}>
+        <TourGuideZone zone={3}>
           <TouchableOpacity style={styles.button} onPress={() => start(4)}>
             <Text style={styles.buttonText}>Step 4</Text>
           </TouchableOpacity>
